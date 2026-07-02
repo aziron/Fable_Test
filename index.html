@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Bestify — niezawodna infrastruktura IT, DevOps i wysoka dostępność. Administracja serwerami Linux/BSD, chmura, bezpieczeństwo, optymalizacja WWW i aplikacje mobilne. Rzeszów, Polska.">
+<title>Bestify — Infrastruktura IT i DevOps</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230ea5e9'/%3E%3Ctext x='50' y='68' font-size='55' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'%3EB%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#0b1120;
+  --bg-soft:#111a2e;
+  --card:#151f36;
+  --border:#233150;
+  --text:#e6edf7;
+  --muted:#93a3bc;
+  --accent:#38bdf8;
+  --accent-2:#818cf8;
+  --radius:14px;
+}
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#f7fafd;
+    --bg-soft:#eef3f9;
+    --card:#ffffff;
+    --border:#dce5f0;
+    --text:#0f1b2d;
+    --muted:#51637d;
+  }
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.container{max-width:1080px;margin:0 auto;padding:0 1.25rem}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Header */
+header{
+  position:sticky;top:0;z-index:10;
+  background:color-mix(in srgb, var(--bg) 82%, transparent);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+}
+nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:.55rem;font-weight:700;font-size:1.15rem;color:var(--text)}
+.logo:hover{text-decoration:none}
+.logo-mark{
+  width:30px;height:30px;border-radius:8px;flex:none;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:grid;place-items:center;color:#fff;font-size:1rem;font-weight:800;
+}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{color:var(--muted);font-size:.95rem}
+.nav-links a:hover{color:var(--text);text-decoration:none}
+@media (max-width:640px){.nav-links{display:none}}
+
+/* Hero */
+.hero{padding:6rem 0 4.5rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{
+  content:"";position:absolute;inset:-40% -20% auto;height:130%;z-index:-1;
+  background:
+    radial-gradient(600px 320px at 30% 20%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%),
+    radial-gradient(600px 320px at 70% 10%, color-mix(in srgb, var(--accent-2) 14%, transparent), transparent 70%);
+}
+.hero h1{font-size:clamp(2rem,5.5vw,3.4rem);line-height:1.15;letter-spacing:-.02em;max-width:22ch;margin:0 auto 1.25rem}
+.hero h1 span{
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p{color:var(--muted);font-size:1.15rem;max-width:56ch;margin:0 auto 2.25rem}
+.cta{
+  display:inline-block;padding:.85rem 2rem;border-radius:999px;
+  background:linear-gradient(90deg,var(--accent),var(--accent-2));
+  color:#fff;font-weight:600;transition:transform .15s ease,box-shadow .15s ease;
+}
+.cta:hover{text-decoration:none;transform:translateY(-2px);box-shadow:0 10px 30px -10px color-mix(in srgb, var(--accent) 60%, transparent)}
+.cta.ghost{background:transparent;border:1px solid var(--border);color:var(--text);margin-left:.6rem}
+
+/* Stats */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding:0 0 4rem}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.4rem 1rem;text-align:center}
+.stat b{display:block;font-size:1.7rem;background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{color:var(--muted);font-size:.9rem}
+@media (max-width:640px){.stats{grid-template-columns:1fr}}
+
+/* Sections */
+section{padding:4.5rem 0}
+section:nth-of-type(even){background:var(--bg-soft)}
+.section-head{max-width:60ch;margin-bottom:2.5rem}
+.eyebrow{color:var(--accent);font-weight:600;font-size:.85rem;text-transform:uppercase;letter-spacing:.1em}
+h2{font-size:clamp(1.6rem,3.5vw,2.2rem);letter-spacing:-.01em;margin:.4rem 0 .75rem}
+.section-head p{color:var(--muted)}
+
+/* Services grid */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.25rem}
+.card{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:1.6rem;transition:transform .15s ease,border-color .15s ease;
+}
+.card:hover{transform:translateY(-3px);border-color:color-mix(in srgb, var(--accent) 45%, var(--border))}
+.card .icon{
+  width:44px;height:44px;border-radius:10px;display:grid;place-items:center;margin-bottom:1rem;
+  background:color-mix(in srgb, var(--accent) 14%, transparent);color:var(--accent);
+}
+.card h3{font-size:1.1rem;margin-bottom:.5rem}
+.card p{color:var(--muted);font-size:.95rem}
+
+/* About */
+.about-wrap{display:grid;grid-template-columns:1.2fr 1fr;gap:2.5rem;align-items:start}
+.about-wrap ul{list-style:none;display:grid;gap:.8rem}
+.about-wrap li{display:flex;gap:.6rem;color:var(--muted)}
+.about-wrap li::before{content:"✓";color:var(--accent);font-weight:700;flex:none}
+@media (max-width:760px){.about-wrap{grid-template-columns:1fr}}
+
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem}
+.contact-grid .card p{margin-top:.2rem}
+address{font-style:normal;color:var(--muted)}
+
+/* Footer */
+footer{border-top:1px solid var(--border);padding:2rem 0;color:var(--muted);font-size:.9rem}
+footer .container{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav aria-label="Główna nawigacja">
+      <a class="logo" href="#"><span class="logo-mark">B</span>Bestify</a>
+      <ul class="nav-links">
+        <li><a href="#uslugi">Usługi</a></li>
+        <li><a href="#o-nas">O nas</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="container">
+      <h1>Niezawodna infrastruktura IT <span>dla Twojego biznesu</span></h1>
+      <p>Projektujemy, wdrażamy i utrzymujemy wysokodostępne środowiska serwerowe — w chmurze i lokalnie. Od administracji systemami Linux/BSD po pełną automatyzację DevOps.</p>
+      <a class="cta" href="#kontakt">Skontaktuj się</a>
+      <a class="cta ghost" href="#uslugi">Zobacz usługi</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="stats">
+      <div class="stat"><b>20+</b><span>lat doświadczenia w administracji serwerami</span></div>
+      <div class="stat"><b>99,9%</b><span>dostępność utrzymywanych środowisk</span></div>
+      <div class="stat"><b>PCI DSS</b><span>doświadczenie w środowiskach o wysokim bezpieczeństwie</span></div>
+    </div>
+  </div>
+
+  <section id="uslugi">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Usługi</div>
+        <h2>Co robimy najlepiej</h2>
+        <p>Kompleksowa opieka nad infrastrukturą — od pojedynczego serwera po skalowalne, rozproszone platformy.</p>
+      </div>
+      <div class="grid">
+        <div class="card">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="3" width="20" height="7" rx="2"/><rect x="2" y="14" width="20" height="7" rx="2"/><path d="M6 6.5h.01M6 17.5h.01"/></svg></div>
+          <h3>Administracja serwerami</h3>
+          <p>Utrzymanie i monitoring systemów Linux i BSD. Aktualizacje, hardening, kopie zapasowe i reagowanie na incydenty — 24/7.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12a8 8 0 0 1 13.6-5.7L20 8.5M20 12a8 8 0 0 1-13.6 5.7L4 15.5"/><path d="M20 4v4.5h-4.5M4 20v-4.5h4.5"/></svg></div>
+          <h3>DevOps i CI/CD</h3>
+          <p>Infrastruktura jako kod, potoki CI/CD, release management, automatyzacja i monitoring. Szybsze wdrożenia bez przestojów.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 0 0 .4-9A7 7 0 0 0 4.3 12.6 3.5 3.5 0 0 0 6.5 19z"/></svg></div>
+          <h3>Chmura i wysoka dostępność</h3>
+          <p>Architektury odporne na awarie — w chmurze publicznej, prywatnej lub hybrydowej. Skalowanie dopasowane do realnego ruchu.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>Bezpieczeństwo i zgodność</h3>
+          <p>Środowiska spełniające rygorystyczne standardy, w tym PCI DSS dla instytucji finansowych. Audyty, segmentacja, szyfrowanie.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L4.5 13.5H11L10 22l8.5-11.5H12z"/></svg></div>
+          <h3>Optymalizacja wydajności WWW</h3>
+          <p>Lekkie strony, nowoczesne protokoły HTTP/2 i HTTP/3, kompresja Brotli, CDN oraz anycast DNS. Krótszy czas ładowania, lepsze SEO.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18.5h2"/></svg></div>
+          <h3>Aplikacje mobilne</h3>
+          <p>Projektowanie i rozwój aplikacji na Androida oraz iOS — od pomysłu, przez wdrożenie, po publikację w sklepach.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="o-nas">
+    <div class="container">
+      <div class="about-wrap">
+        <div>
+          <div class="eyebrow">O nas</div>
+          <h2>Doświadczenie, na którym można polegać</h2>
+          <p style="color:var(--muted)">Bestify to zespół specjalistów z ponad dwudziestoletnim doświadczeniem w utrzymaniu systemów serwerowych. Pomagamy firmom budować infrastrukturę, która po prostu działa — bezpiecznie, wydajnie i przewidywalnie, niezależnie od skali.</p>
+        </div>
+        <ul>
+          <li>Ponad 20 lat praktyki w systemach Linux i BSD</li>
+          <li>Wdrożenia DevOps: IaC, CI/CD, monitoring, backup</li>
+          <li>Środowiska o wysokim bezpieczeństwie (PCI DSS)</li>
+          <li>Optymalizacja szybkości i dostępności serwisów WWW</li>
+          <li>Aplikacje mobilne na Androida i iOS</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt">
+    <div class="container">
+      <div class="section-head">
+        <div class="eyebrow">Kontakt</div>
+        <h2>Porozmawiajmy o Twoim projekcie</h2>
+        <p>Napisz do nas — odpowiemy i zaproponujemy rozwiązanie dopasowane do Twoich potrzeb.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="card">
+          <h3>Adres</h3>
+          <address>ul. T. Rejtana 53A/116A<br>35-326 Rzeszów<br>Polska</address>
+        </div>
+        <div class="card">
+          <h3>Dane rejestrowe</h3>
+          <p>Bestify Sp. z o.o.<br>NIP: 8133807579<br>KRS: 0000775658</p>
+        </div>
+        <div class="card">
+          <h3>Online</h3>
+          <p><a href="https://bestify.pl" rel="noopener">bestify.pl</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <span>© 2026 Bestify Sp. z o.o. Wszelkie prawa zastrzeżone.</span>
+    <span>Rzeszów, Polska</span>
+  </div>
+</footer>
+
+</body>
+</html>
